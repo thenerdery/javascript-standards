@@ -1,0 +1,206 @@
+###################################################################################################
+# ESLint rules enforcing Nerdery JavaScript standards
+# https://github.com/thenerdery/javascript-standards/linters
+#
+# Last tested with eslint v2.8.0 and babel-eslint v6.0.0
+###################################################################################################
+
+{
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "globals": {
+    "module": true,
+    "require": true,
+    "define": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    ###############################################################################################
+    # ARRAYS <https://github.com/thenerdery/javascript-standards#arrays>
+    ###############################################################################################
+
+    "no-array-constructor": 2,                    # Disallow Array constructor
+    "array-callback-return": 2,                   # Require return statements in array callbacks
+    "prefer-spread": 2,                           # Require spread operator instead of .apply()
+
+    ###############################################################################################
+    # ARROW FUNCTIONS <https://github.com/thenerdery/javascript-standards#arrow-functions>
+    ###############################################################################################
+
+    "prefer-arrow-callback": 2,                   # Require arrow functions as callbacks
+    "arrow-spacing": [2, {                        # Require space before/after arrows
+      "before": true,
+      "after": true
+    }],
+    "arrow-parens": [2, "as-needed"],             # Require parens in arrow function arguments
+
+    ###############################################################################################
+    # BLOCKS <https://github.com/thenerdery/javascript-standards#blocks>
+    ###############################################################################################
+
+    "brace-style": [2, "1tbs", {                  # Require brace style
+      "allowSingleLine": true
+    }],
+    "curly": 2,                                   # Require curly brace conventions
+    "guard-for-in": 2,                            # Require hasOwnProperty() within for-in loops
+
+    ###############################################################################################
+    # CLASSES <http://github.com/thenerdery/javascript-standards#classes>
+    ###############################################################################################
+
+    "no-dupe-class-members": 2,                   # Disallow duplicate class member names
+    "no-class-assign": 2,                         # Disallow reassigning classes
+    "no-useless-constructor": 2,                  # Disallow unnecessary constructor
+    "no-this-before-super": 2,                    # Disallow `this` before super()
+
+    ###############################################################################################
+    # COMMAS <https://github.com/thenerdery/javascript-standards#commas>
+    ###############################################################################################
+
+    "comma-style": [2, "last"],                   # Require standard comma style
+    "comma-dangle": [2, "always-multiline"],      # Require trailing commas
+
+    ###############################################################################################
+    # COMMENTS <https://github.com/thenerdery/javascript-standards#comments>
+    ###############################################################################################
+
+    "spaced-comment": ["error", "always", {       # Require whitespace before comments
+      "line": {
+        "markers": ["/"],
+        "exceptions": ["-"]
+      },
+      "block": {
+        "markers": ["/", "*"]
+      }
+    }],
+    "valid-jsdoc": [2, {                          # Require docblocks match params/return type
+      "requireParamDescription": false,
+      "requireReturnDescription": false
+    }],
+
+    ###############################################################################################
+    # COMPARISON <https://github.com/thenerdery/javascript-standards#comparison>
+    ###############################################################################################
+
+    "eqeqeq": [2, "allow-null"],                  # Require === and !==, allow null check
+    "no-case-declarations": 2,                    # Require case statements are wrapped in parens
+    "no-undefined": 2,                            # Disallow use of undefined variable
+    "no-nested-ternary": 2,                       # Disallow nested ternaries
+
+    ###############################################################################################
+    # DESTRUCTURING <https://github.com/thenerdery/javascript-standards#destructuring>
+    ###############################################################################################
+
+    "no-empty-pattern": 2,                        # Disallow empty destructuring patterns
+
+    ###############################################################################################
+    # FUNCTIONS <https://github.com/thenerdery/javascript-standards#functions>
+    ###############################################################################################
+
+    "no-param-reassign": [2, {"props": true}],    # Disallow reassignment of parameters
+    "max-params": [2, 5],                         # Disallow more than 5 parameters
+    "prefer-rest-params": 2,                      # Require rest parameters instead of `arguments`
+    "wrap-iife": [2, "outside"],                  # Require IIFEs to be wrapped
+    "no-inner-declarations": 2,                   # Disallow nested function/var declarations
+    "no-new-func": 2,                             # Disallow Function() constructor
+    "no-unreachable": 2,                          # Disallow unreachable code after return
+
+    ###############################################################################################
+    # MODULES <https://github.com/thenerdery/javascript-standards#modules>
+    ###############################################################################################
+
+    "no-duplicate-imports": [2, {                 # Disallow duplicate imports
+      includeExports: true
+    }],
+
+    ###############################################################################################
+    # NAMING CONVENTIONS <https://github.com/thenerdery/javascript-standards#naming-conventions>
+    ###############################################################################################
+
+    "camelcase": [2, {"properties": "always"}],   # Require camelCase property names
+    "new-cap": 2,                                 # Require Capitalized class names
+
+    ###############################################################################################
+    # OBJECTS <https://github.com/thenerdery/javascript-standards#objects>
+    ###############################################################################################
+
+    "no-new-object": 2,                           # Disallow Object() constructor
+    "object-shorthand": [2, "always"],            # Require object literal shorthand
+    "quote-props": [2, "as-needed", {             # Enforce quotes on property names when required
+      "keywords": true
+    }],
+
+    ###############################################################################################
+    # PROPERTIES <https://github.com/thenerdery/javascript-standards#properties>
+    ###############################################################################################
+
+    "dot-notation": [2, {                         # Require dot notation
+      "allowPattern": "^[a-z]+(_[a-z]+)+$"
+    }],
+
+    ###############################################################################################
+    # SEMICOLONS <https://github.com/thenerdery/javascript-standards#semicolons>
+    ###############################################################################################
+
+    "semi": [2, "always"],                        # Require semicolons
+
+    ###############################################################################################
+    # STRINGS <https://github.com/thenerdery/javascript-standards#strings>
+    ###############################################################################################
+
+    "quotes": [2, "single"],                      # Require single quoted strings
+    "template-curly-spacing": [2, "never"],       # Disallow curly spacing in template strings
+    "no-multi-str": 2,                            # Disallow multiline strings
+    "prefer-template": 2,                         # Disallow string concatenation using +
+    "no-eval": 2,                                 # Disallow eval()
+
+    ###############################################################################################
+    #TYPES <https://github.com/thenerdery/javascript-standards#types>
+    ###############################################################################################
+
+    "no-implicit-coercion": 2,                    # Disallow type conversion with shorter notations
+    "no-bitwise": 2,                              # Disallow bitwise operators
+    "radix": [2, "always"],                       # Require radix parameter
+    "no-new-wrappers": 2,                         # Disallow String/Number/Boolean constructors
+
+    ###############################################################################################
+    # VARIABLES <https://github.com/thenerdery/javascript-standards#variables>
+    ###############################################################################################
+
+    "prefer-const": 2,                            # Require const when not reassigned
+    "no-const-assign": 2,                         # Disallow modifying const variables
+    "no-var": 2,                                  # Disallow use of `var`
+    "one-var": [2, "never"],                      # Disallow one variable declaration per scope
+    "no-undef": 2,                                # Disallow undeclared variables
+
+    ###############################################################################################
+    # WHITESPACE <https://github.com/thenerdery/javascript-standards#whitespace>
+    ###############################################################################################
+
+    "indent": [2, 4, {"SwitchCase": 1}],          # Require 4-space indents
+    "space-before-blocks": [2, "always"],         # Require space before blocks
+    "space-infix-ops": 2,                         # Require spaces around infix operators
+    "newline-per-chained-call": [2, {             # Require newline per chained method call
+      "ignoreChainWithDepth": 2
+    }],
+    "no-whitespace-before-property": 2,           # Disallow whitespace before properties
+    "space-in-parens": [2, "never"],              # Disallow spaces inside of parentheses
+    "array-bracket-spacing": [2, "never"],        # Disallow spaces inside of brackets
+    "object-curly-spacing": [2, "always"],        # Require spaces inside object curly braces
+    "max-len": [2, {                              # Disallow lines over 100 characters
+      "code": 100,
+      "ignoreUrls": true
+    }],
+    "keyword-spacing": [2, {                      # Require spacing before and after keywords
+      "before": true,
+      "after": true
+    }],
+    "space-before-function-paren": [2, "never"],  # Disallow space before function parenthesis
+    "padded-blocks": [2, "never"],                # Require padding within blocks
+    "no-mixed-spaces-and-tabs": 2,                # Disallow mixing of spaces and tabs
+    "no-trailing-spaces": 2,                      # Disallow trailing spaces
+    "eol-last": 2                                 # Require file to end with a newline
+  }
+}
