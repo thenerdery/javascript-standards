@@ -28,6 +28,13 @@
     }
 }());
 
+(function() {
+    // good
+    function foo(a) {
+        a.b = 1;
+    }
+}());
+
 // https://github.com/thenerdery/javascript-standards#functions--default-parameters
 // eslint: no-param-reassign
 (function() {
