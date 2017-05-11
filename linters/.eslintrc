@@ -1,14 +1,15 @@
 ###################################################################################################
 # ESLint rules enforcing Nerdery JavaScript standards
-# https://github.com/thenerdery/javascript-standards/linters
+# https://github.com/thenerdery/javascript-standards/tree/master/linters
 #
-# Last tested with eslint v2.8.0 and babel-eslint v6.0.0
+# Last tested with eslint v3.19.0 and babel-eslint v7.2.2
 ###################################################################################################
 
 {
   "env": {
     "browser": true,
-    "node": false
+    "node": false,
+    "es6": true
   },
   "globals": {
     "module": true,
@@ -86,7 +87,7 @@
     # COMPARISON <https://github.com/thenerdery/javascript-standards#comparison>
     ###############################################################################################
 
-    "eqeqeq": [2, "allow-null"],                  # Require === and !==, allow null check
+    "eqeqeq": [2, "always", { null: "ignore" }],  # Require === and !==, allow null check
     "no-case-declarations": 2,                    # Require case statements are wrapped in parens
     "no-undefined": 2,                            # Disallow use of undefined variable
     "no-nested-ternary": 2,                       # Disallow nested ternaries
@@ -101,7 +102,7 @@
     # FUNCTIONS <https://github.com/thenerdery/javascript-standards#functions>
     ###############################################################################################
 
-    "no-param-reassign": [2, {"props": true}],    # Disallow reassignment of parameters
+    "no-param-reassign": [2, {"props": false }],  # Disallow reassignment of parameters
     "max-params": [2, 5],                         # Disallow more than 5 parameters
     "prefer-rest-params": 2,                      # Require rest parameters instead of `arguments`
     "wrap-iife": [2, "outside"],                  # Require IIFEs to be wrapped
@@ -159,7 +160,7 @@
     "no-eval": 2,                                 # Disallow eval()
 
     ###############################################################################################
-    #TYPES <https://github.com/thenerdery/javascript-standards#types>
+    # TYPES <https://github.com/thenerdery/javascript-standards#types>
     ###############################################################################################
 
     "no-implicit-coercion": 2,                    # Disallow type conversion with shorter notations
@@ -176,6 +177,14 @@
     "no-var": 2,                                  # Disallow use of `var`
     "one-var": [2, "never"],                      # Disallow one variable declaration per scope
     "no-undef": 2,                                # Disallow undeclared variables
+    "no-use-before-define": 2,                    # Disallow using variables before declaration
+    "no-global-assign": 2,                        # Disallow overwriting native variables
+    "no-multi-assign": 2,                         # Disallow multiple assignments on one line
+    "no-unused-vars": [2, {                       # Disallow unused variables
+      "vars": "local",
+      "args": "after-used",
+      "ignoreRestSiblings": true
+    }],
 
     ###############################################################################################
     # WHITESPACE <https://github.com/thenerdery/javascript-standards#whitespace>
@@ -193,7 +202,11 @@
     "object-curly-spacing": [2, "always"],        # Require spaces inside object curly braces
     "max-len": [2, {                              # Disallow lines over 100 characters
       "code": 100,
-      "ignoreUrls": true
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
     }],
     "keyword-spacing": [2, {                      # Require spacing before and after keywords
       "before": true,
@@ -203,6 +216,7 @@
     "padded-blocks": [2, "never"],                # Require padding within blocks
     "no-mixed-spaces-and-tabs": 2,                # Disallow mixing of spaces and tabs
     "no-trailing-spaces": 2,                      # Disallow trailing spaces
-    "eol-last": 2                                 # Require file to end with a newline
+    "eol-last": 2,                                # Require file to end with a newline
+    "rest-spread-spacing": 2                      # Disallow spaces between spread operator
   }
 }
