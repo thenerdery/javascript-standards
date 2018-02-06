@@ -15,6 +15,7 @@ This document is not intended to:
 * Guide the reader in learning JavaScript
 
 [ESLint Config for the Nerdery JavaScript Standards](https://github.com/thenerdery/javascript-standards/linters)
+[ESLint Config for the Nerdery JavaScript Standards](https://github.com/thenerdery/javascript-standards/tree/master/linters)
 
 ## Table of Contents
 
