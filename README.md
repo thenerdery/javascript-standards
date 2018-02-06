@@ -14,7 +14,6 @@ This document is not intended to:
 * Give advice on design patterns and project architecture
 * Guide the reader in learning JavaScript
 
-[ESLint Config for the Nerdery JavaScript Standards](https://github.com/thenerdery/javascript-standards/linters)
 [ESLint Config for the Nerdery JavaScript Standards](https://github.com/thenerdery/javascript-standards/tree/master/linters)
 
 ## Table of Contents
