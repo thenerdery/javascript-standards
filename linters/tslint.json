@@ -94,6 +94,7 @@
 
     // WHITESPACE <https://github.com/thenerdery/javascript-standards#whitespace>
 
+    "no-multi-spaces": [true],                    // Disallow multiple spaces
     "whitespace": [                               // Enforce whitespace style conventions
       true,
       "check-branch",
