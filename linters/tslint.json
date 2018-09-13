@@ -4,7 +4,7 @@
 
     // RECOMMENDATIONS
 
-    "interface-name": [true, "always-prefix"],    // Require interface names to begin with a capital ‘I’
+    "interface-name": [true, "never-prefix"],     // Require interface names to not have an “I” prefix
     "deprecation": true,                          // Warn when deprecated APIs are used
 
     // MODULES <https://github.com/thenerdery/javascript-standards#modules>
