@@ -6,6 +6,12 @@
 
     "interface-name": [true, "never-prefix"],     // Require interface names to not have an “I” prefix
     "deprecation": true,                          // Warn when deprecated APIs are used
+    "member-ordering": [                          // Enforce member ordering
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
 
     // MODULES <https://github.com/thenerdery/javascript-standards#modules>
 
