@@ -1,0 +1,161 @@
+{
+  "extends": ["tslint-eslint-rules"],
+  "rules": {
+
+    // RECOMMENDATIONS
+
+    "interface-name": [true, "never-prefix"],     // Require interface names to not have an “I” prefix
+    "deprecation": true,                          // Warn when deprecated APIs are used
+    "member-ordering": [                          // Enforce member ordering
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
+
+    // MODULES <https://github.com/thenerdery/javascript-standards#modules>
+
+    "no-duplicate-imports": true,                 // Disallow duplicate imports
+
+    // ARROW FUNCTIONS <https://github.com/thenerdery/javascript-standards#arrow-functions>
+
+    "prefer-arrow-callback": 2,                   // Require arrow functions as callbacks
+    "arrow-spacing": [2, {                        // Require space before/after arrows
+      "before": true,
+      "after": true
+    }],
+
+    // VARIABLES <https://github.com/thenerdery/javascript-standards#variables>
+
+    "variable-name": [                            // Check variable names for various errors
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "one-variable-per-declaration": true,         // Disallow multiple variable definitions in the same declaration statement
+    "no-duplicate-variable": [                    // Disallow duplicate variable declarations in the same block scope, including parameters
+      true,
+      "check-parameters"
+    ],
+    "no-unused-expression": true,                 // Disallow unused expression statements
+    "no-shadowed-variable": true,                 // Disallow shadowing variable declarations
+    "no-unused-variable": true,                   // Disallow unused imports, variables, functions and private class members
+    "no-use-before-declare": true,                // Disallow usage of variables before their declaration
+    "no-var-keyword": true,                       // Disallow usage of the var keyword
+    "prefer-const": true,                         // Require const when not reassigned
+
+    // OBJECTS <https://github.com/thenerdery/javascript-standards#objects>
+
+    "object-literal-shorthand": true,             // Enforce use of ES6 object literal shorthand
+
+    // TYPES <https://github.com/thenerdery/javascript-standards#types>
+
+    "typedef": [                                  // Require type definitions to exist
+      true,
+      "parameter",
+      "property-declaration"
+    ],
+    "typedef-whitespace": [                       // Enforce one space after type information
+      true,
+      {
+          "call-signature": "nospace",
+          "index-signature": "nospace",
+          "parameter": "nospace",
+          "property-declaration": "nospace",
+          "variable-declaration": "nospace"
+      }
+    ],
+    "no-any": true,                               // Disallow usage of any as a type declaration
+    "ban-types": [                                // Disallow use of Object and String types
+      true,
+      ["Object"],
+      ["Boolean"],
+      ["String"],
+      ["Function"]
+    ],
+    "no-extra-boolean-cast": true,                // Prevent unnecessary boolean cast
+    "no-invalid-regexp": true,                    // Disallow invalid regular expression strings in the RegExp constructor
+    "no-construct": true,                         // Disallow String/Number/Boolean constructors
+    "radix": true,                                // Require the radix parameter to be specified when calling parseInt
+    "no-bitwise": true,                           // Disallow bitwise operators
+
+    // STRINGS <https://github.com/thenerdery/javascript-standards#strings>
+
+    "no-eval": true,                              // Disallow eval function invocations
+    "quotemark": [true, "single", "jsx-double"],  // Prefer single quotes for strings
+
+    // BLOCKS <https://github.com/thenerdery/javascript-standards#blocks>
+
+    "forin": true,                                // Require a for ... in statement to be filtered with an if statement
+    "curly": [true, "ignore-same-line"],          // Enforce braces for if/for/do/while statements
+
+    // COMPARISON <https://github.com/thenerdery/javascript-standards#comparison>
+
+    "no-duplicate-switch-case": true,             // Prevent duplicate cases in switch statements
+    "no-conditional-assignment": true,            // Disallow assignment within conditionals
+    "cyclomatic-complexity": [true, 8],         // Enforce a threshold of cyclomatic complexity
+    "no-switch-case-fall-through": true,          // Disallow falling through case statements
+    "triple-equals": [true, "allow-null-check"],  // Require === and !==, allow null check
+
+    // WHITESPACE <https://github.com/thenerdery/javascript-standards#whitespace>
+
+    "no-multi-spaces": [true],                    // Disallow multiple spaces
+    "whitespace": [                               // Enforce whitespace style conventions
+      true,
+      "check-branch",
+      "check-decl",
+      "check-module",
+      "check-operator",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-typecast",
+      "check-type-operator",
+      "check-preblock"
+    ],
+    "object-curly-spacing": [2, "always"],        // Require spaces inside object curly braces
+    "indent": [true, "spaces", 4],                // Enforce 4 spaces
+    "no-irregular-whitespace": true,              // Disallow irregular whitespace
+    "no-trailing-whitespace": true,               // Disallow trailing whitespace at the end of a line
+    "array-bracket-spacing": [2, "never"],        // Disallow spaces inside of brackets
+    "eofline": true,                              // Require file to end with a newline
+    "max-line-length": [                          // Disallow lines over 100 characters
+      true,
+      {
+        "limit": 100,
+        "ignore-pattern": "^import "
+      }
+    ],
+
+    // SEMICOLONS <https://github.com/thenerdery/javascript-standards#semicolons>
+
+    "semicolon": [true, "always"],                // Require semicolons
+    "no-extra-semi": true,                        // Disallow extra semicolons
+
+    // COMMENTS <https://github.com/thenerdery/javascript-standards#comments>
+
+    "jsdoc-format": true,                         // Enforce basic format rules for JSDoc comments
+    "valid-jsdoc": [2, {                          // Require docblocks match params/return type
+      "requireParamDescription": false,
+      "requireReturnDescription": false,
+      "requireReturn": false
+    }],
+    "comment-format": [                           // Require a space before comment
+      true,
+      "check-space"
+    ],
+
+    // COMMAS <https://github.com/thenerdery/javascript-standards#commas>
+
+    "trailing-comma": [                           // Require trailing commas
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ]
+
+  }
+}
